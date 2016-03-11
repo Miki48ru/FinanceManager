@@ -5,6 +5,7 @@ package com.example.exceptions;
  */
 public class CurrencyException extends Exception {
     public CurrencyException() {
+        super();
     }
 
     public CurrencyException(String message) {
