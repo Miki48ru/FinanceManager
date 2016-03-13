@@ -7,6 +7,8 @@ import java.util.List;
  */
 public interface TreeNode {
 
+    String getName();
+
     long getId();
 
     void addChild();
@@ -19,8 +21,10 @@ public interface TreeNode {
 
     TreeNode getParent();
 
+    void addChild(TreeNode child);
+
     void setParent(TreeNode parent);
 
 
-
+    void removeChild(TreeNode child);
 }
