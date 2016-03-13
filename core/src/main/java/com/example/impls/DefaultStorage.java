@@ -1,5 +1,6 @@
 package com.example.impls;
 
+import com.example.abstracts.AbstractTreeNode;
 import com.example.exceptions.AmountException;
 import com.example.exceptions.CurrencyException;
 import com.example.interfaces.Storage;
@@ -14,22 +15,26 @@ import java.util.Map;
 /**
  * Created by Mike on 10.03.2016.
  */
-public class DefaultStorage implements Storage {
+public class DefaultStorage extends AbstractTreeNode implements Storage {
 
     private List<Currency> currencyList = new ArrayList<>();
-    private String name;
+
     private Map<Currency, BigDecimal> currencyAmounts = new HashMap<Currency, BigDecimal>();
 
     public DefaultStorage() {
     }
 
     public DefaultStorage(String name) {
-        this.name = name;
+        super(name);
+    }
+
+    public DefaultStorage(long id, String name) {
+        super(id, name);
     }
 
     public DefaultStorage(List<Currency> currencyList, String name, Map<Currency, BigDecimal> currencyAmounts) {
+        super(name);
         this.currencyList = currencyList;
-        this.name = name;
         this.currencyAmounts = currencyAmounts;
     }
 
@@ -41,14 +46,18 @@ public class DefaultStorage implements Storage {
         this.currencyList = currencyList;
     }
 
+
+
     @Override
-    public String getName() {
-        return name;
+    public void addChild() {
+
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public void removeChild() {
+
     }
+
 
 
 
