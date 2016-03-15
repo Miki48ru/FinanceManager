@@ -16,6 +16,9 @@ public abstract class AbstractTreeNode implements TreeNode {
 
     private TreeNode parent;
 
+    public AbstractTreeNode() {
+    }
+
     private String name;
 
     public AbstractTreeNode(long id, List<TreeNode> childs, TreeNode parent, String name) {
@@ -25,7 +28,7 @@ public abstract class AbstractTreeNode implements TreeNode {
         this.name = name;
     }
 
-    public AbstractTreeNode() {
+    public AbstractTreeNode(String name, long id) {
     }
 
     public AbstractTreeNode(String name) {
