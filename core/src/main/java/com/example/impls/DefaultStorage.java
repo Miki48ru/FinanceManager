@@ -22,6 +22,7 @@ public class DefaultStorage extends AbstractTreeNode implements Storage {
     private Map<Currency, BigDecimal> currencyAmounts = new HashMap<Currency, BigDecimal>();
 
     public DefaultStorage() {
+
     }
 
     public DefaultStorage(String name) {
@@ -39,10 +40,16 @@ public class DefaultStorage extends AbstractTreeNode implements Storage {
     }
 
     public DefaultStorage(Map<Currency, BigDecimal> currencyAmounts) {
+
         this.currencyAmounts = currencyAmounts;
     }
 
+    public DefaultStorage(String name, long id) {
+        super(name, id);
+    }
+
     public DefaultStorage(List<Currency> currencyList) {
+
         this.currencyList = currencyList;
     }
 
