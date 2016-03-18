@@ -11,16 +11,6 @@ import java.util.Currency;
  */
 public class Main {
     public static void main(String[] args) {
-        try {
-            DefaultStorage storage = new DefaultStorage();
-            Currency currencyUSD = Currency.getInstance("USD");
-            Currency currencyRUB = Currency.getInstance("RUB");
-
-            storage.addCurrency(currencyUSD);
-            storage.addAmount(new BigDecimal(200), currencyUSD);
-            System.out.println(storage.getAmount(currencyUSD));
-        } catch (CurrencyException e) {
-            e.printStackTrace();
-        }
+       
     }
 }
