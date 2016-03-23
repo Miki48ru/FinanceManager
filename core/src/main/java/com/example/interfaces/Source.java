@@ -5,9 +5,7 @@ import com.example.objects.OperationType;
 /**
  * Created by Mike on 15.03.2016.
  */
-public interface Source {
-
-    String getName();
+public interface Source extends TreeNode {
 
     OperationType getOperationType();
 }
