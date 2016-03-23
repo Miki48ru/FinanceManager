@@ -11,11 +11,11 @@ import java.util.Map;
 /**
  * Created by Mike on 09.03.2016.
  */
-public interface Storage {
+public interface Storage extends TreeNode {
 
 
 
-    String getName();
+
 
     //получение баланса
 
