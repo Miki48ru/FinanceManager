@@ -25,6 +25,9 @@ public interface TreeNode {
 
     void setParent(TreeNode parent);
 
-
     void removeChild(TreeNode child);
+
+    boolean hasChilds(); //проверяет наличие дочерних элементов
+
+
 }
