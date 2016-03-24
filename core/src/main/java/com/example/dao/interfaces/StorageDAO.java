@@ -1,5 +1,6 @@
 package com.example.dao.interfaces;
 
+import com.example.exceptions.CurrencyException;
 import com.example.interfaces.Storage;
 
 import java.math.BigDecimal;
@@ -10,7 +11,7 @@ import java.util.Currency;
  */
 public interface StorageDAO extends CommonDAO<Storage> {
 
-    boolean addCurrency(Storage storage, Currency currency);
-    boolean deleteCurrency (Storage storage, Currency currency);
-    boolean updateAmount(Storage storage, BigDecimal amount);
+    boolean addCurrency(Storage storage, Currency currency) throws CurrencyException;
+    boolean deleteCurrency (Storage storage, Currency currency) throws CurrencyException;
+    boolean updateAmount(Storage storage, Currency currency, BigDecimal amount);
 }
