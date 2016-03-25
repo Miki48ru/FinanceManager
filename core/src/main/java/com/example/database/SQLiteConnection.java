@@ -20,7 +20,7 @@ public class SQLiteConnection {
         try {
            Class.forName("org.sqlite.JDBC").newInstance();
 
-           String url = "jdbc:sqlite:c:\\Users\\Mike\\AndroidStudioProjects\\DataBase\\FinanceManager\\mony.db";
+           String url = "jdbc:sqlite:c:\\Users\\Mike\\AndroidStudioProjects\\DataBase\\FinanceManager\\monеy.db";
 
            if (con == null) con = DriverManager.getConnection(url);
 
