@@ -11,24 +11,11 @@ import java.util.List;
 public abstract class AbstractTreeNode implements TreeNode {
 
     private long id;
-
     private List<TreeNode> childs = new ArrayList<>();
-
     private TreeNode parent;
-
-    public AbstractTreeNode() {
-    }
-
     private String name;
 
-    public AbstractTreeNode(long id, List<TreeNode> childs, TreeNode parent, String name) {
-        this.id = id;
-        this.childs = childs;
-        this.parent = parent;
-        this.name = name;
-    }
-
-    public AbstractTreeNode(String name, long id) {
+    public AbstractTreeNode() {
     }
 
     public AbstractTreeNode(String name) {
@@ -39,13 +26,20 @@ public abstract class AbstractTreeNode implements TreeNode {
         this.childs = childs;
     }
 
-    public AbstractTreeNode(long id, String name) {
+    public AbstractTreeNode(String name, long id) {
+        this.name = name;
         this.id = id;
+    }
+
+    public AbstractTreeNode(long id, List<TreeNode> childs, TreeNode parent, String name) {
+        this.id = id;
+        this.childs = childs;
+        this.parent = parent;
         this.name = name;
     }
 
     @Override
-    public void addChild(TreeNode child) {
+    public void add(TreeNode child) {
         child.setParent(this);
         childs.add(child);
     }
@@ -61,7 +55,7 @@ public abstract class AbstractTreeNode implements TreeNode {
     }
 
     @Override
-    public void removeChild(TreeNode child) {
+    public void remove(TreeNode child) {
         childs.remove(child);
     }
 
@@ -81,7 +75,8 @@ public abstract class AbstractTreeNode implements TreeNode {
 
     @Override
     public TreeNode getChild(long id) {
-        for (TreeNode child:childs) {
+
+        for (TreeNode child: childs) {
             if (child.getId() == id){
                 return child;
             }
@@ -90,23 +85,16 @@ public abstract class AbstractTreeNode implements TreeNode {
         return null;
     }
 
+
     @Override
-    public String getName() {
-        return name;
+    public boolean hasChilds(){
+        return !childs.isEmpty();// если есть дочерние элементы - вернуть true
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {
         return name;
-    }
-
-    @Override
-    public boolean hasChilds(){
-        return !childs.isEmpty();
     }
 
     @Override
@@ -123,5 +111,14 @@ public abstract class AbstractTreeNode implements TreeNode {
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
