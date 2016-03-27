@@ -1,6 +1,7 @@
 package com.example.interfaces;
 
-import com.example.objects.OperationType;
+
+import com.example.impls.operations.OperationType;
 
 /**
  * Created by Mike on 15.03.2016.
