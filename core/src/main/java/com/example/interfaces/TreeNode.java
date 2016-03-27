@@ -11,9 +11,9 @@ public interface TreeNode {
 
     long getId();
 
-    void addChild();
+    void add();
 
-    void removeChild();
+    void remove();
 
     List<TreeNode> getChilds();
 
@@ -21,11 +21,11 @@ public interface TreeNode {
 
     TreeNode getParent();
 
-    void addChild(TreeNode child);
+    void add(TreeNode child);
 
     void setParent(TreeNode parent);
 
-    void removeChild(TreeNode child);
+    void remove(TreeNode child);
 
     boolean hasChilds(); //проверяет наличие дочерних элементов
 
