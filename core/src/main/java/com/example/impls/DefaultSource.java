@@ -1,9 +1,10 @@
 package com.example.impls;
 
 import com.example.abstracts.AbstractTreeNode;
+import com.example.impls.operations.OperationType;
 import com.example.interfaces.Source;
 import com.example.interfaces.TreeNode;
-import com.example.objects.OperationType;
+
 
 import java.util.List;
 
@@ -14,19 +15,7 @@ public class DefaultSource extends AbstractTreeNode implements Source {
 
     private OperationType operationType;
 
-    public DefaultSource(String name, long id, OperationType operationType) {
-        super(name, id);
-        this.operationType = operationType;
-    }
-
-
-
-    public DefaultSource(long id, List<TreeNode> childs, TreeNode parent, String name) {
-        super(id, childs, parent, name);
-    }
-
-    public DefaultSource(String name, long id) {
-        super(name, id);
+    public DefaultSource() {
     }
 
     public DefaultSource(String name) {
@@ -37,9 +26,19 @@ public class DefaultSource extends AbstractTreeNode implements Source {
         super(childs);
     }
 
-    public DefaultSource(long id, String name) {
-        super(id, name);
+    public DefaultSource(String name, long id) {
+        super(name, id);
     }
+
+    public DefaultSource(long id, List<TreeNode> childs, TreeNode parent, String name) {
+        super(id, childs, parent, name);
+    }
+
+    public DefaultSource(String name, long id, OperationType operationType) {
+        super(name, id);
+        this.operationType = operationType;
+    }
+
 
     @Override
     public OperationType getOperationType() {
@@ -50,22 +49,25 @@ public class DefaultSource extends AbstractTreeNode implements Source {
         this.operationType = operationType;
     }
 
+
+
+
     @Override
-    public void addChild() {
+    public void add() {
 
     }
 
     @Override
-    public void removeChild() {
+    public void remove() {
 
     }
 
     @Override
-    public void addChild(TreeNode child) {
+    public void add(TreeNode child) {
         if (child instanceof DefaultSource){
             ((DefaultSource)child).setOperationType(operationType);
         }
 
-        super.addChild(child);
+        super.add(child);
     }
 }
