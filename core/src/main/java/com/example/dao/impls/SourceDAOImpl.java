@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  * Created by Mike on 27.03.2016.
@@ -72,7 +73,7 @@ public class SourceDAOImpl implements SourceDAO {
     private void fillSourceMap() {
         // в sourceMap и sourceList находятся одни и те же объекты!!
 
-        for (OperationType type: OperationType.values()) {
+        for (OperationType type : OperationType.values()) {
             // используем lambda выражение для фильтрации
             sourceMap.put(type, sourceList.stream().filter(s -> s.getOperationType() == type).collect(Collectors.toList()));
         }
