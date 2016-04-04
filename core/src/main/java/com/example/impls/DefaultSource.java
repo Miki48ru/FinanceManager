@@ -1,7 +1,7 @@
 package com.example.impls;
 
 import com.example.abstracts.AbstractTreeNode;
-import com.example.impls.operations.OperationType;
+import com.example.enums.OperationType;
 import com.example.interfaces.Source;
 import com.example.interfaces.TreeNode;
 
