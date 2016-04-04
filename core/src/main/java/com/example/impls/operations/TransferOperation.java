@@ -1,6 +1,7 @@
 package com.example.impls.operations;
 
-import com.example.abstracts.AbstractOpiration;
+import com.example.abstracts.AbstractOperation;
+import com.example.enums.OperationType;
 import com.example.interfaces.Storage;
 
 import java.math.BigDecimal;
@@ -10,41 +11,23 @@ import java.util.Currency;
 /**
  * Created by Mike on 16.03.2016.
  */
-public class TransferOperation extends AbstractOpiration {
-    private Storage fromeStorage;
-    private Storage toStorage;
-    private BigDecimal amount;
-    private Currency currency;
+public class TransferOperation extends AbstractOperation{
 
-    public TransferOperation(Storage fromeStorage, Storage toStorage, BigDecimal amount, Currency currency) {
-        this.fromeStorage = fromeStorage;
-        this.toStorage = toStorage;
-        this.amount = amount;
-        this.currency = currency;
+    public TransferOperation() {
+        super(OperationType.TRANSFER);
     }
 
-    public TransferOperation(long id, Calendar dateTime, String addInfo, Storage fromeStorage, Storage toStorage, BigDecimal amount, Currency currency) {
-        super(id, dateTime, addInfo);
-        this.fromeStorage = fromeStorage;
-        this.toStorage = toStorage;
-        this.amount = amount;
-        this.currency = currency;
+    private Storage fromStorage;// откуда переводим
+    private Storage toStorage; // куда переводим
+    private BigDecimal fromAmount;// сумма перевода
+    private Currency fromCurrency;// в какой валюте получили деньги
+
+    public Storage getFromStorage() {
+        return fromStorage;
     }
 
-    public TransferOperation(long id, Storage fromeStorage, Storage toStorage, BigDecimal amount, Currency currency) {
-        super(id);
-        this.fromeStorage = fromeStorage;
-        this.toStorage = toStorage;
-        this.amount = amount;
-        this.currency = currency;
-    }
-
-    public Storage getFromeStorage() {
-        return fromeStorage;
-    }
-
-    public void setFromeStorage(Storage fromeStorage) {
-        this.fromeStorage = fromeStorage;
+    public void setFromStorage(Storage fromStorage) {
+        this.fromStorage = fromStorage;
     }
 
     public Storage getToStorage() {
@@ -55,19 +38,19 @@ public class TransferOperation extends AbstractOpiration {
         this.toStorage = toStorage;
     }
 
-    public BigDecimal getAmount() {
-        return amount;
+    public BigDecimal getFromAmount() {
+        return fromAmount;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
+    public void setFromAmount(BigDecimal fromAmount) {
+        this.fromAmount = fromAmount;
     }
 
-    public Currency getCurrency() {
-        return currency;
+    public Currency getFromCurrency() {
+        return fromCurrency;
     }
 
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
+    public void setFromCurrency(Currency fromCurrency) {
+        this.fromCurrency = fromCurrency;
     }
 }
