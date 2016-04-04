@@ -1,6 +1,6 @@
 package com.example.dao.interfaces;
 
-import com.example.impls.operations.OperationType;
+import com.example.enums.OperationType;
 import com.example.interfaces.Source;
 
 import java.util.List;
@@ -11,6 +11,8 @@ import java.util.List;
 public interface SourceDAO extends CommonDAO<Source> {
 
    // получить список корневыъ элементов деревьев для определенного типа операции
+
+    boolean add(Source source);
 
     List<Source> getList(OperationType operationType);
 }
