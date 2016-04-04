@@ -1,7 +1,7 @@
 package com.example.interfaces;
 
 
-import com.example.impls.operations.OperationType;
+import com.example.enums.OperationType;
 
 /**
  * Created by Mike on 15.03.2016.
