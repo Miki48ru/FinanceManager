@@ -9,25 +9,26 @@ public interface TreeNode {
 
     String getName();
 
-    long getId();
+    long getId(); // каждый элемент дерева должен иметь свой уникальный идентификатор
 
-    void add();
+    void setId(long id); // установить id
 
-    void remove();
+    long getParentId();
 
-    List<TreeNode> getChilds();
+    void add(TreeNode child); // добавить один дочерний элемент
 
-    TreeNode getChild (long id);
+    void remove(TreeNode child); // удалить один дочерний элемент
 
-    TreeNode getParent();
+    List<TreeNode> getChilds(); // дочерних элементов может быть любое количество
 
-    void add(TreeNode child);
+    TreeNode getChild(long id); // получение дочернего элемента по id
 
-    void setParent(TreeNode parent);
+    TreeNode getParent(); // получение родительского элемента - пригодится в разных ситуациях, например для отчетности по всем узлам дерева
 
-    void remove(TreeNode child);
+    void setParent(TreeNode parent);	// установка родительского элемента
 
-    boolean hasChilds(); //проверяет наличие дочерних элементов
+    boolean hasChilds(); // проверяет, есть ли дочерние элементы
 
+    boolean hasParent(); // проверяет, есть ли родитель
 
 }
